@@ -14,7 +14,7 @@ namespace MultiShop.Catalog.Entities
         public int Stock { get; set; }
         public string CategoryId { get; set; }
 
-        [BsonIgnore]
+        [BsonIgnore] //JsonIgnore türevi
         public Category Category { get; set; }
     }
 }
