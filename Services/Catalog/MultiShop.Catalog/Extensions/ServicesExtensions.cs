@@ -8,7 +8,7 @@ using System.Reflection;
 
 namespace MultiShop.Catalog.Extensions
 {
-    public static class CatalogExtensions
+    public static class ServicesExtensions
     {
         public static void AddServices(this IServiceCollection services)
         {
