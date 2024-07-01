@@ -1,8 +1,9 @@
-﻿namespace MultiShop.Catalog.Dtos.CategoryDtos
+﻿using MultiShop.Catalog.Dtos.CategoryDtos.Common;
+
+namespace MultiShop.Catalog.Dtos.CategoryDtos
 {
-    public class ResultCategoryDto
+    public class ResultCategoryDto : CategoryDto
     {
         public string Id { get; set; }
-        public string Name { get; set; }
     }
 }

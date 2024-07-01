@@ -1,12 +1,9 @@
-﻿namespace MultiShop.Catalog.Dtos.ProductDtos
+﻿using MultiShop.Catalog.Dtos.ProductDtos.Common;
+
+namespace MultiShop.Catalog.Dtos.ProductDtos
 {
-    public class GetByIdProductDto
+    public class GetByIdProductDto : ProductDto
     {
         public string Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public decimal Price { get; set; }
-        public string ImageUrl { get; set; }
-        public int Stock { get; set; }
     }
 }

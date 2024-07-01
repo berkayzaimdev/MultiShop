@@ -1,9 +1,8 @@
-﻿namespace MultiShop.Catalog.Dtos.ProductDetailDtos
+﻿using MultiShop.Catalog.Dtos.ProductDetailDtos.Common;
+
+namespace MultiShop.Catalog.Dtos.ProductDetailDtos
 {
-    public class CreateProductDetailDto
+    public class CreateProductDetailDto : ProductDetailDto
     {
-        public string ProductDescription { get; set; }
-        public string ProductInfo { get; set; }
-        public string ProductId { get; set; }
     }
 }

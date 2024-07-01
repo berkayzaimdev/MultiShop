@@ -1,8 +1,6 @@
-﻿using MultiShop.Catalog.Dtos.ProductImageDtos.Common;
-
-namespace MultiShop.Catalog.Dtos.ProductImageDtos
+﻿namespace MultiShop.Catalog.Dtos.ProductImageDtos.Common
 {
-    public class CreateProductImageDto : ProductImageDto
+    public class ProductImageDto
     {
         public string Image1 { get; set; }
         public string Image2 { get; set; }
