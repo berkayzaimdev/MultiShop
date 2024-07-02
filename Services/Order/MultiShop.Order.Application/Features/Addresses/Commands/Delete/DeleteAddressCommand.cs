@@ -15,6 +15,11 @@ namespace MultiShop.Order.Application.Features.Addresses.Commands.Delete
     {
         public int Id { get; set; }
 
+        public DeleteAddressCommand(int id)
+        {
+            Id = id;
+        }
+
         public class DeleteAddressCommandHandler : IRequestHandler<DeleteAddressCommand>
         {
             private readonly IRepository<Address> _repository;
