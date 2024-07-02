@@ -1,5 +1,6 @@
 using MultiShop.Order.Application;
 using MultiShop.Order.Application.Interfaces;
+using MultiShop.Order.Infrastructure.Context;
 using MultiShop.Order.Infrastructure.Repositories;
 using System.Reflection;
 
@@ -18,6 +19,7 @@ builder.Services.Configure<RouteOptions>(
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(DataRepository<>));
 builder.Services.AddMediator();
+builder.Services.AddDbContext<OrderContext>();
 
 var app = builder.Build();
 

@@ -12,7 +12,7 @@ namespace MultiShop.Order.Infrastructure
     {
         public static void AddOrdersInfrastructure(this IServiceCollection services)
         {
-            services.AddSingleton<OrderContext>();        
+            services.AddDbContext<OrderContext>();        
         }
     }
 }

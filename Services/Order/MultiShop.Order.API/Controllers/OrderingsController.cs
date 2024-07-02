@@ -40,7 +40,7 @@ namespace MultiShop.Order.API.Controllers
             return Ok();
         }
 
-        [HttpPut("{id}")]
+        [HttpPut]
         public async Task<IActionResult> UpdateOrderingAsync(UpdateOrderingCommand command)
         {
             await _mediator.Send(command);
