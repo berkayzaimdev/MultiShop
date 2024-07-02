@@ -13,6 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddServices();
 builder.Services.AddAutoMapper();
 builder.Services.ConfigureDatabase(builder.Configuration);
+builder.Services.ConfigureJWT(configuration: builder.Configuration);
 
 var app = builder.Build();
 
@@ -25,6 +26,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

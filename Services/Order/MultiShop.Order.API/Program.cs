@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using MultiShop.Order.Application;
 using MultiShop.Order.Application.Interfaces;
 using MultiShop.Order.Infrastructure.Context;
@@ -20,6 +21,12 @@ builder.Services.Configure<RouteOptions>(
 builder.Services.AddScoped(typeof(IRepository<>), typeof(DataRepository<>));
 builder.Services.AddMediator();
 builder.Services.AddDbContext<OrderContext>();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opts =>
+{
+    opts.Audience = "ResourceDiscount";
+    opts.Authority = builder.Configuration["IdentityServerUrl"];
+    opts.RequireHttpsMetadata = false;
+});
 
 var app = builder.Build();
 
