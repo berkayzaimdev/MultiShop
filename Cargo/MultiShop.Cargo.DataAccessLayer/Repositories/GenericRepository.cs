@@ -27,9 +27,9 @@ namespace MultiShop.Cargo.DataAccessLayer.Repositories
             _context.SaveChanges();
         }
 
-        public void Delete(T entity)
+        public void Delete(int id)
         {
-            var value = _dbSet.Find(entity);
+            var value = _dbSet.Find(id);
             _dbSet.Remove(value);
             _context.SaveChanges();
         }

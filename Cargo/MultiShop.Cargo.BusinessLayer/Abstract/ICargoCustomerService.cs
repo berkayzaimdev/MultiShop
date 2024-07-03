@@ -1,6 +1,8 @@
-﻿namespace MultiShop.Cargo.BusinessLayer.Abstract
+﻿using MultiShop.Cargo.EntityLayer.Concrete;
+
+namespace MultiShop.Cargo.BusinessLayer.Abstract
 {
-    public interface ICargoCustomerService<T> : IGenericService<T> where T : class
+    public interface ICargoCustomerService : IGenericService<CargoCustomer>
     {
     }
 }
