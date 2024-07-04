@@ -1,4 +1,4 @@
-﻿namespace MultiShop.WebUI.Models
+﻿namespace MultiShop.WebUI.Areas.Admin.Models
 {
     public class ErrorViewModel
     {
