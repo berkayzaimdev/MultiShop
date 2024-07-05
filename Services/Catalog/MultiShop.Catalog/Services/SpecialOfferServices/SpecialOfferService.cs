@@ -19,10 +19,10 @@ namespace MultiShop.Catalog.Services.SpecialOfferServices
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<SpecialOfferDto>> GetSpecialOffersAsync()
+        public async Task<IEnumerable<ResultSpecialOfferDto>> GetSpecialOffersAsync()
         {
             var values = await _featureSliderCollection.Find(x => true).ToListAsync();
-            return _mapper.Map<IEnumerable<SpecialOfferDto>>(values);
+            return _mapper.Map<IEnumerable<ResultSpecialOfferDto>>(values);
         }
 
         public async Task CreateSpecialOfferAsync(CreateSpecialOfferDto createSpecialOfferDto)
@@ -42,10 +42,10 @@ namespace MultiShop.Catalog.Services.SpecialOfferServices
             await _featureSliderCollection.FindOneAndDeleteAsync(x => x.Id == id);
         }
 
-        public async Task<SpecialOfferDto> GetByIdSpecialOfferAsync(string id)
+        public async Task<ResultSpecialOfferDto> GetByIdSpecialOfferAsync(string id)
         {
             var value = await _featureSliderCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
-            return _mapper.Map<SpecialOfferDto>(value);
+            return _mapper.Map<ResultSpecialOfferDto>(value);
         }
     }
 }
