@@ -4,6 +4,9 @@ using Microsoft.Extensions.Options;
 using MultiShop.DtoLayer.IdentityDtos.LoginDtos;
 using MultiShop.WebUI.Services.Abstract;
 using System.Security.Claims;
+using MultiShop.IdentityServer.Settings;
+using IdentityModel.Client;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 
 
 namespace MultiShop.WebUI.Services.Concrete
@@ -38,8 +41,8 @@ namespace MultiShop.WebUI.Services.Concrete
 
             RefreshTokenRequest refreshTokenRequest = new()
             {
-                ClientId = _clientSettings.MultiShopManagerClient.ClientId,
-                ClientSecret = _clientSettings.MultiShopManagerClient.ClientSecret,
+                ClientId = _clientSettings.MultiShopManagerId.ClientId,
+                ClientSecret = _clientSettings.MultiShopManagerId.ClientSecret,
                 RefreshToken = refreshToken,
                 Address = discoveryEndPoint.TokenEndpoint
             };
@@ -88,8 +91,8 @@ namespace MultiShop.WebUI.Services.Concrete
 
             var passwordTokenRequest = new PasswordTokenRequest
             {
-                ClientId = _clientSettings.MultiShopManagerClient.ClientId,
-                ClientSecret = _clientSettings.MultiShopManagerClient.ClientSecret,
+                ClientId = _clientSettings.MultiShopManagerId.ClientId,
+                ClientSecret = _clientSettings.MultiShopManagerId.ClientSecret,
                 UserName = signInDto.Username,
                 Password = signInDto.Password,
                 Address = discoveryEndPoint.TokenEndpoint
@@ -128,9 +131,12 @@ namespace MultiShop.WebUI.Services.Concrete
                     Name=OpenIdConnectParameterNames.ExpiresIn,
                     Value=DateTime.Now.AddSeconds(token.ExpiresIn).ToString()
                 }
-            });
+            }); 
+            // üç farklı token tutuyoruz
+            // access token kısa süreli, refresh token uzun süreli erişim
+            // ilaveten token ın geçerlilik süresi
 
-            authenticationProperties.IsPersistent = false;
+            authenticationProperties.IsPersistent = false; // her seferinde giriş istemesi için
 
             await _httpContextAccessor.HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal, authenticationProperties);
 
