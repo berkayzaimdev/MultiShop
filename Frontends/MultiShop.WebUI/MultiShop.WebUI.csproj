@@ -71,4 +71,9 @@
     <ProjectReference Include="..\MultiShop.DtoLayer\MultiShop.DtoLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\Abstract\Catalogs\" />
+    <Folder Include="Services\Concrete\Catalogs\" />
+  </ItemGroup>
+
 </Project>
