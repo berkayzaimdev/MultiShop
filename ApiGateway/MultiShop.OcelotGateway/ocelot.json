@@ -2,7 +2,7 @@
   "Routes": [
     // catalog
     {
-      "DownstreamPathTemplate": "/api/{everything}", // dönen yanýt, everything ile her þey gelebilir
+      "DownstreamPathTemplate": "/api/{everything}", // donen yanit, everything ile her sey gelebilir
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -14,8 +14,8 @@
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
       "UpstreamScheme": "http",
       "AuthenticationOptions": {
-        "AuthenticationProviderKey": "OcelotAuthenticationScheme", // default auth provider
-        "AllowedScopes": [ "CatalogFullPermission" ] // izin verilen yetkiler
+        "AuthenticationProviderKey": "OcelotAuthenticationScheme",
+        "AllowedScopes": ["CatalogFullPermission"]
       }
     },
 
@@ -110,7 +110,7 @@
       "UpstreamScheme": "http",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "OcelotAuthenticationScheme",
-        "AllowedScopes": [ "CommentFullPermission" ]
+        "AllowedScopes": [ "CommentFullPermisson" ]
       }
     },
 
@@ -149,7 +149,7 @@
       "UpstreamScheme": "http",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "OcelotAuthenticationScheme",
-        "AllowedScopes": [ "ImagestFullPermission" ]
+        "AllowedScopes": [ "ImagesFullPermission" ]
       }
     }
   ],
