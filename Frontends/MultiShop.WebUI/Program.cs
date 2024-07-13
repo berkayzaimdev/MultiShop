@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using MultiShop.IdentityServer.Settings;
 using MultiShop.WebUI.Services.Abstract;
 using MultiShop.WebUI.Services.Concrete;
 
@@ -31,6 +32,8 @@ builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddHttpClient<IIdentityService, IdentityService>();
+
+builder.Services.Configure<ClientSettings>(builder.Configuration.GetSection("ClientSettings"));
 
 builder.Services.AddHttpClient();
 builder.Services.AddControllersWithViews();
