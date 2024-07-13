@@ -7,6 +7,7 @@ using System.Security.Claims;
 using MultiShop.IdentityServer.Settings;
 using IdentityModel.Client;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+using MultiShop.WebUI.Settings;
 
 
 namespace MultiShop.WebUI.Services.Concrete
@@ -41,8 +42,8 @@ namespace MultiShop.WebUI.Services.Concrete
 
             RefreshTokenRequest refreshTokenRequest = new()
             {
-                ClientId = _clientSettings.MultiShopManagerId.ClientId,
-                ClientSecret = _clientSettings.MultiShopManagerId.ClientSecret,
+                ClientId = _clientSettings.MultiShopManagerClient.ClientId,
+                ClientSecret = _clientSettings.MultiShopManagerClient.ClientSecret,
                 RefreshToken = refreshToken,
                 Address = discoveryEndPoint.TokenEndpoint
             };
@@ -91,8 +92,8 @@ namespace MultiShop.WebUI.Services.Concrete
 
             var passwordTokenRequest = new PasswordTokenRequest
             {
-                ClientId = _clientSettings.MultiShopManagerId.ClientId,
-                ClientSecret = _clientSettings.MultiShopManagerId.ClientSecret,
+                ClientId = _clientSettings.MultiShopManagerClient.ClientId,
+                ClientSecret = _clientSettings.MultiShopManagerClient.ClientSecret,
                 UserName = signInDto.Username,
                 Password = signInDto.Password,
                 Address = discoveryEndPoint.TokenEndpoint

@@ -59,7 +59,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiShop.OcelotGateway", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Payment", "Payment", "{04FB240B-1EF9-4DE6-A542-B5FDA1820157}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{B85524E7-36D5-462F-B71A-12E3FE967018}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Image", "Image", "{B85524E7-36D5-462F-B71A-12E3FE967018}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
