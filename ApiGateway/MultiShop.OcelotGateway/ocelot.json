@@ -1,0 +1,24 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/{everything}", // dönen yanýt, everything ile her þey gelebilir
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7070
+        }
+      ],
+      "UpstreamPathTemplate": "/services/catalog/{everything}", // gelen istek
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
+      "UpstreamScheme": "http",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "OcelotAuthenticationScheme", // default auth provider
+        "AllowedScopes": ["CatalogFullPermission"] // izin verilen yetkiler
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:5000"
+  }
+}
